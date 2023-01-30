@@ -12,6 +12,7 @@ public class Engine {
         System.out.println("1. Add Matrices");
         System.out.println("2. Multiply matrix by a constant");
         System.out.println("3. Multiply matrices");
+        System.out.println("4. Transpose matrix");
         System.out.println("0. Exit");
         System.out.print("Your choice: ");
         choice = scanner.nextInt();
@@ -24,12 +25,15 @@ public class Engine {
                 ScalarMultiply.scalarMultiply();
             } else if (choice == 3) {
                 MatrixMultiply.matrixMultiply();
+            } else if (choice == 4) {
+                Transpose.transpose();
             }
 
             System.out.print('\n');
             System.out.println("1. Add Matrices");
             System.out.println("2. Multiply matrix by a constant");
             System.out.println("3. Multiply matrices");
+            System.out.println("4. Transpose matrix");
             System.out.println("0. Exit");
             System.out.print("Your choice: ");
             choice = scanner.nextInt();
