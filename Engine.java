@@ -9,13 +9,7 @@ public class Engine {
 
     public void run() {
 
-        System.out.println("1. Add Matrices");
-        System.out.println("2. Multiply matrix by a constant");
-        System.out.println("3. Multiply matrices");
-        System.out.println("4. Transpose matrix");
-        System.out.println("0. Exit");
-        System.out.print("Your choice: ");
-        choice = scanner.nextInt();
+        choice = prompt();
 
         while (choice != 0){
 
@@ -27,16 +21,22 @@ public class Engine {
                 MatrixMultiply.matrixMultiply();
             } else if (choice == 4) {
                 Transpose.transpose();
+            } else if (choice == 5) {
+                Determinant.solve();
             }
 
-            System.out.print('\n');
-            System.out.println("1. Add Matrices");
-            System.out.println("2. Multiply matrix by a constant");
-            System.out.println("3. Multiply matrices");
-            System.out.println("4. Transpose matrix");
-            System.out.println("0. Exit");
-            System.out.print("Your choice: ");
-            choice = scanner.nextInt();
+            choice = prompt();
         }
+    }
+
+    public int prompt() {
+        System.out.println("1. Add Matrices");
+        System.out.println("2. Multiply matrix by a constant");
+        System.out.println("3. Multiply matrices");
+        System.out.println("4. Transpose matrix");
+        System.out.println("5. Calculate a determinant");
+        System.out.println("0. Exit");
+        System.out.print("Your choice: ");
+        return scanner.nextInt();
     }
 }
