@@ -6,7 +6,7 @@ public class Determinant {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void solve() {
+    public static void output() {
 
         System.out.print("Enter matrix size: ");
         int n = scanner.nextInt();
@@ -20,23 +20,30 @@ public class Determinant {
             }
         }
 
-        double result = 0;
-
-        if (n == m) {
-            if (n == 1) {
-                result = a[0][0];
-            } else if (n == 2) {
-                result = (a[0][0] * a[1][1]) - (a[0][1] * a[1][0]);
-            } else if (n == 3) {
-                result = solveThreeByThree(a);
-            } else {
-                result = solveFourUp(a, n);
-            }
-        }
+        double result = solve(a, n, m);
 
         System.out.println("The result is:");
         System.out.println(result);
         System.out.print('\n');
+    }
+
+    public static double solve(double a[][], int n, int m) {
+
+        double det = 0;
+
+        if (n == m) {
+            if (n == 1) {
+                det = a[0][0];
+            } else if (n == 2) {
+                det = (a[0][0] * a[1][1]) - (a[0][1] * a[1][0]);
+            } else if (n == 3) {
+                det = solveThreeByThree(a);
+            } else {
+                det = solveFourUp(a, n);
+            }
+        }
+
+        return det;
     }
 
     public static double solveThreeByThree(double[][] a) {

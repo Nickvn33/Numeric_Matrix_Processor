@@ -28,18 +28,22 @@ public class Transpose {
             }
         }
 
+        double[][] result = new double[an][am];
+
         if (choice == 1) {
-            diagonal(an, am, a);
+            result = diagonal(an, am, a);
         } else if (choice == 2) {
-            side(an, am, a);
+            result = side(an, am, a);
         } else if (choice == 3) {
-            vertical(an, am, a);
+            result = vertical(an, am, a);
         } else if (choice == 4) {
-            horizontal(an, am, a);
+            result = horizontal(an, am, a);
         }
+
+        print(an, am, result);
     }
 
-    public static void diagonal(int an, int am, double[][] a) {
+    public static double[][] diagonal(int an, int am, double[][] a) {
         double[][] t = new double[am][an];
 
         for (int i = 0; i < an; i++) {
@@ -48,10 +52,10 @@ public class Transpose {
             }
         }
 
-        print(am, an, t);
+        return t;
     }
 
-    public static void side(int an, int am, double[][] a) {
+    public static double[][] side(int an, int am, double[][] a) {
         double[][] t = new double[am][an];
 
         for (int i = 0; i < an; i++) {
@@ -60,10 +64,10 @@ public class Transpose {
             }
         }
 
-        print(am, an, t);
+        return t;
     }
 
-    public static void vertical(int an, int am, double[][] a) {
+    public static double[][] vertical(int an, int am, double[][] a) {
         double[][] t = new double[an][am];
 
         for (int i = 0; i < an; i++) {
@@ -72,10 +76,10 @@ public class Transpose {
             }
         }
 
-        print(an, am , t);
+        return t;
     }
 
-    public static void horizontal(int an, int am, double[][] a) {
+    public static double[][] horizontal(int an, int am, double[][] a) {
         double[][] t = new double[an][am];
 
         for (int i = 0; i < an; i++) {
@@ -84,7 +88,7 @@ public class Transpose {
             }
         }
 
-        print(an, am , t);
+        return t;
     }
 
     public static void print(int tn, int tm, double[][] t) {

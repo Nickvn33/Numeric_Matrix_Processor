@@ -22,7 +22,9 @@ public class Engine {
             } else if (choice == 4) {
                 Transpose.transpose();
             } else if (choice == 5) {
-                Determinant.solve();
+                Determinant.output();
+            } else if (choice == 6) {
+                Inverse.output();
             }
 
             choice = prompt();
@@ -35,6 +37,7 @@ public class Engine {
         System.out.println("3. Multiply matrices");
         System.out.println("4. Transpose matrix");
         System.out.println("5. Calculate a determinant");
+        System.out.println("6. Inverse Matrix");
         System.out.println("0. Exit");
         System.out.print("Your choice: ");
         return scanner.nextInt();
